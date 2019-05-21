@@ -1,5 +1,11 @@
 #!/bin/bash -e
 
+echo "================= Adding some global settings ==================="
+mkdir -p "$HOME/.ssh/"
+mv /c7node/config "$HOME/.ssh/"
+cat /c7node/90forceyes >> /etc/yum.conf
+touch "$HOME/.ssh/known_hosts"
+
 echo "================= Installing basic packages ================"
 
 yum -y install  \
