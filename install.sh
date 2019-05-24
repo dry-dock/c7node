@@ -5,6 +5,8 @@ mkdir -p "$HOME/.ssh/"
 mv /c7node/config "$HOME/.ssh/"
 cat /c7node/90forceyes >> /etc/yum.conf
 touch "$HOME/.ssh/known_hosts"
+mkdir -p /etc/drydock
+
 
 echo "================= Installing basic packages ================"
 
@@ -24,6 +26,9 @@ curl -sS https://raw.githubusercontent.com/creationix/nvm/"$NVM_VERSION"/install
 
 # Set NVM_DIR so the installations go to the right place
 export NVM_DIR="/root/.nvm"
+
+# add source of nvm to .bashrc - allows user to use nvm as a command
+echo "source ~/.nvm/nvm.sh" >> /etc/drydock/.env
 
 echo "================= Installing Python packages ==================="
 sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm
