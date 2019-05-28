@@ -18,7 +18,8 @@ curl \
 openssh-client \
 ftp \
 gettext \
-smbclient
+smbclient \
+openssl
 
 export NVM_VERSION=v0.34.0
 echo "================= Installing NVM $NVM_VERSION ================"
